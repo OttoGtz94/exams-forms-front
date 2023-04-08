@@ -1,11 +1,9 @@
 import {
-	AddBox,
 	AddCircleOutline,
 	Save,
 } from '@mui/icons-material';
 import {
 	Button,
-	IconButton,
 	Slider,
 	TextField,
 	Typography,
@@ -177,7 +175,6 @@ const NewExam = () => {
 						{points} pts / {remainingPoints} pts
 					</p>
 					<Slider
-						//defaultValue={100}
 						value={points}
 						aria-label='percentage'
 						valueLabelDisplay='auto'
@@ -194,10 +191,8 @@ const NewExam = () => {
 						color='primary'
 						variant='outlined'
 						label='Pregunta'
-						//focused
 						size='small'
 						style={{
-							//width: '350px',
 							margin: '10px',
 						}}
 						margin='normal'
@@ -213,10 +208,8 @@ const NewExam = () => {
 						color='secondary'
 						variant='outlined'
 						label='Respuesta Correcta'
-						//focused
 						size='small'
 						style={{
-							//width: '350px',
 							margin: '10px',
 						}}
 						margin='normal'
@@ -232,10 +225,8 @@ const NewExam = () => {
 						color='error'
 						variant='outlined'
 						label='Respuesta Incorrecta'
-						//focused
 						size='small'
 						style={{
-							//width: '350px',
 							margin: '10px',
 						}}
 						margin='normal'
@@ -251,10 +242,8 @@ const NewExam = () => {
 						color='error'
 						variant='outlined'
 						label='Respuesta Incorrecta'
-						//focused
 						size='small'
 						style={{
-							//width: '350px',
 							margin: '10px',
 						}}
 						margin='normal'
@@ -270,10 +259,8 @@ const NewExam = () => {
 						color='error'
 						variant='outlined'
 						label='Respuesta Incorrecta'
-						//focused
 						size='small'
 						style={{
-							//width: '350px',
 							margin: '10px',
 						}}
 						margin='normal'
@@ -340,15 +327,6 @@ const NewExam = () => {
 											</p>
 										),
 									)}
-									{/* <p className='error'>
-										{q.answersError}
-									</p> */}
-									{/* <p className='error'>
-										{q.answersError2}
-									</p>
-									<p className='error'>
-										{q.answersError3}
-									</p> */}
 								</div>
 							),
 						)
@@ -358,58 +336,6 @@ const NewExam = () => {
 							examen.
 						</p>
 					)}
-					{/* <div className='containerQuestion'>
-						<p className='question'>
-							Pregunta 1{' '}
-							<FontAwesomeIcon
-								color='#8d2424'
-								style={{ cursor: 'pointer' }}
-								icon={faTrash}
-							/>
-						</p>
-						<p className='correct'>
-							respuesta correcta
-						</p>
-						<p className='error'>
-							respuesta incorrecta
-						</p>
-						<p className='error'>
-							respuesta incorrecta
-						</p>
-						<p className='error'>
-							respuesta incorrecta
-						</p>
-					</div> */}
-					{/* <div className='containerQuestion'>
-						<p className='question'>Pregunta 2</p>
-						<p className='correct'>
-							respuesta correcta
-						</p>
-						<p className='error'>
-							respuesta incorrecta
-						</p>
-						<p className='error'>
-							respuesta incorrecta
-						</p>
-						<p className='error'>
-							respuesta incorrecta
-						</p>
-					</div>
-					<div className='containerQuestion'>
-						<p className='question'>Pregunta 3</p>
-						<p className='correct'>
-							respuesta correcta
-						</p>
-						<p className='error'>
-							respuesta incorrecta
-						</p>
-						<p className='error'>
-							respuesta incorrecta
-						</p>
-						<p className='error'>
-							respuesta incorrecta
-						</p>
-					</div> */}
 				</ul>
 			</div>
 		</div>

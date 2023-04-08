@@ -177,6 +177,35 @@ body {
 								}
 							}
 						}
+
+						//form student
+						.formStudent {
+							.group {
+								//background-color: #15895e;
+								width: 100%;
+								padding: 10px;
+								display: inline-flex;
+								flex-wrap: wrap;
+								align-items: center;
+								.sliderContainer {
+									width: calc(100% - 250px);
+									span {
+										font-size: 13px;
+									}
+								}
+								.selectCountry {
+									.MuiFormLabel-root {
+										font-size: 13px;
+									}
+									.MuiInputBase-input {
+										font-size: 13px;
+									}
+								}
+							}
+							.groupSelects {
+								justify-content: space-between;
+							}
+						}
 					}
 				}
 			}

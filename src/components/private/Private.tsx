@@ -67,7 +67,7 @@ const Private = () => {
 									color: '#fff',
 									margin: '0px 5px',
 								}}
-								to={'/students'}>
+								to={'students'}>
 								Alumnos
 							</Link>
 						</Box>

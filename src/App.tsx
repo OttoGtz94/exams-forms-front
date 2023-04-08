@@ -21,6 +21,10 @@ import NewExam from './components/private/exams/NewExam';
 import ExamAssigneds from './components/private/exams/ExamAssigneds';
 import ExamAnswered from './components/private/exams/ExamAnswered';
 import { ExamProvider } from './context/Exam.provider';
+import MainStudent from './components/private/students/MainStudent';
+import Students from './components/private/students/Students';
+import NewStudent from './components/private/students/NewStudent';
+import { StudentProvider } from './context/Student.provider';
 
 function App() {
 	return (
@@ -42,60 +46,80 @@ function App() {
 					<BrowserRouter>
 						<AuthProvider>
 							<ExamProvider>
-								<Routes>
-									<Route
-										path='/'
-										element={<Home />}>
+								<StudentProvider>
+									<Routes>
 										<Route
-											path='/login'
-											element={<Login />}
-										/>
-										<Route
-											path='register'
-											element={<Register />}
-										/>
-										<Route
-											path='*'
-											element={<Error404 />}
-										/>
-									</Route>
-									<Route
-										path='/user'
-										element={<Private />}>
-										<Route
-											index
-											element={<Dashboard />}
-										/>
-										<Route
-											path='exams'
-											element={<MainExam />}>
+											path='/'
+											element={<Home />}>
 											<Route
-												index
-												element={<Exams />}
+												path='/login'
+												element={<Login />}
 											/>
 											<Route
-												path='add-exam'
-												element={<NewExam />}
+												path='register'
+												element={<Register />}
 											/>
 											<Route
-												path='assigneds'
-												element={
-													<ExamAssigneds />
-												}
-											/>
-											<Route
-												path='answered'
-												element={
-													<ExamAnswered />
-												}
+												path='*'
+												element={<Error404 />}
 											/>
 										</Route>
 										<Route
-											path='*'
-											element={<Error404 />}
-										/>
-									</Route>
-								</Routes>
+											path='/user'
+											element={<Private />}>
+											<Route
+												index
+												element={<Dashboard />}
+											/>
+											<Route
+												path='exams'
+												element={<MainExam />}>
+												<Route
+													index
+													element={<Exams />}
+												/>
+												<Route
+													path='add-exam'
+													element={<NewExam />}
+												/>
+												<Route
+													path='assigneds'
+													element={
+														<ExamAssigneds />
+													}
+												/>
+												<Route
+													path='answered'
+													element={
+														<ExamAnswered />
+													}
+												/>
+											</Route>
+											<Route
+												path='students'
+												element={
+													<MainStudent />
+												}>
+												<Route
+													index
+													element={
+														<Students />
+													}
+												/>
+												<Route
+													path='add-student'
+													element={
+														<NewStudent />
+													}
+												/>
+											</Route>
+											<Route
+												path='*'
+												element={<Error404 />}
+											/>
+										</Route>
+									</Routes>
+								</StudentProvider>
 							</ExamProvider>
 						</AuthProvider>
 					</BrowserRouter>

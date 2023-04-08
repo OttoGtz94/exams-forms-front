@@ -17,10 +17,14 @@ import {
 	Outlet,
 	useNavigate,
 } from 'react-router-dom';
+import NavigationBar from '../../Layout/NavigationBar';
+import useExam from '../../../hooks/useExam';
 
 const MainExam = () => {
-	const [valueNavigation, setValueNavigation] =
-		useState('examenes');
+	/* const [valueNavigation, setValueNavigation] =
+		useState('examenes'); */
+	const { valueNavigation, setValueNavigation } =
+		useExam();
 
 	const navigate = useNavigate();
 
@@ -38,7 +42,28 @@ const MainExam = () => {
 
 	return (
 		<div className='main'>
-			<div className='navigationContainer'>
+			<NavigationBar
+				valueNavigation={valueNavigation}
+				handleClickNavigation={handleClickNavigation}
+				propsBottomNav={[
+					{
+						label: 'Examenes',
+						icon: Quiz,
+						value: 'examenes',
+					},
+					{
+						label: 'Asignados',
+						icon: AssignmentInd,
+						value: 'assigneds',
+					},
+					{
+						label: 'Nuevo Examen',
+						icon: AddBox,
+						value: 'add-exam',
+					},
+				]}
+			/>
+			{/* <div className='navigationContainer'>
 				<BottomNavigation
 					sx={{ width: 500 }}
 					value={valueNavigation}
@@ -64,7 +89,7 @@ const MainExam = () => {
 						icon={<AddBox />}
 					/>
 				</BottomNavigation>
-			</div>
+			</div> */}
 			<div className='outletMain'>
 				<Outlet />
 			</div>
