@@ -7,14 +7,12 @@ import {
 	IconButton,
 	Typography,
 } from '@mui/material';
-import React from 'react';
 import { DialogExamInterface } from '../../interface/dialog.exam.interface';
-import { useEffect } from 'react';
 import {
 	QuestionFormInterface,
 	ExamInterface,
 } from '../../interface/exam.interface';
-import { Cancel, HighlightOff } from '@mui/icons-material';
+import { Cancel } from '@mui/icons-material';
 import useExam from '../../hooks/useExam';
 import { useNavigate } from 'react-router-dom';
 
@@ -28,9 +26,7 @@ const DialogExam = ({
 	const { setExamSelected, setValueNavigation } =
 		useExam();
 	const navigate = useNavigate();
-	useEffect(() => {
-		console.log('dialog effect ejecutado');
-	}, []);
+
 	return (
 		<Dialog
 			open={open}

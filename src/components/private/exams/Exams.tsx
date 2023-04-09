@@ -23,7 +23,6 @@ const Exams = () => {
 	} = useExam();
 
 	const hanleClickSelectedExam = (exam: ExamInterface) => {
-		console.log(exam);
 		setExamSelected(exam);
 		setOpen(true);
 	};

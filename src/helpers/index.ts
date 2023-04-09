@@ -33,19 +33,3 @@ export const getDaysDifference = (
 
 	return diff;
 };
-/* export const formateDate = (fecha: Date): string => {
-	console.log(
-		fecha.getMonth,
-		fecha.getDay,
-		fecha.getFullYear,
-	);
-	console.log(
-		new Date(fecha).toLocaleDateString('es-Mx', {
-			weekday: 'long',
-			year: 'numeric',
-			month: 'long',
-			day: 'numeric',
-		}),
-	);
-	return 'fecha';
-}; */

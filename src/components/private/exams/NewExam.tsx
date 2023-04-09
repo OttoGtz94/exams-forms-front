@@ -9,12 +9,17 @@ import {
 	Typography,
 } from '@mui/material';
 import React, { FormEvent, useState } from 'react';
-import { QuestionFormInterface } from '../../../interface/exam.interface';
+import {
+	QuestionFormInterface,
+	ExamInterface,
+} from '../../../interface/exam.interface';
 import { alertToastify } from '../../../helpers/index';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import useExam from '../../../hooks/useExam';
 import useAuth from '../../../hooks/useAuth';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const NewExam = () => {
 	const [name, setName] = useState('Nombre del examen');
@@ -26,12 +31,20 @@ const NewExam = () => {
 	const [points, setPoints] = useState<number>(100);
 	const [remainingPoints, setRemainingPoints] =
 		useState(100);
+	const [modeEdit, setModeEdit] = useState(false);
 
 	const [questions, setQuestions] = useState<
 		QuestionFormInterface[]
 	>([]);
 
-	const { postExam } = useExam();
+	const navigate = useNavigate();
+	const {
+		postExam,
+		examSelected,
+		setExamSelected,
+		setValueNavigation,
+		editExam,
+	} = useExam();
 	const {
 		userInfo: { id },
 	} = useAuth();
@@ -61,12 +74,19 @@ const NewExam = () => {
 			);
 			return;
 		}
-
-		postExam({
-			name,
-			questions,
-			userId: id,
-		});
+		if (!modeEdit) {
+			postExam({
+				name,
+				questions,
+				userId: id,
+			});
+		} else {
+			editExam({
+				name,
+				questions,
+				userId: id,
+			});
+		}
 	};
 
 	const handleClickDeleteQuestion = (
@@ -133,6 +153,16 @@ const NewExam = () => {
 		setPoints(1);
 	};
 
+	useEffect(() => {
+		if (Object.entries(examSelected).length > 0) {
+			setName(examSelected.name);
+			setQuestions(examSelected.questions);
+			setRemainingPoints(0);
+			setPoints(0);
+			setModeEdit(true);
+		}
+	}, []);
+
 	return (
 		<div className='containerForm'>
 			<form className='formExam' onSubmit={handleSubmit}>
@@ -153,6 +183,8 @@ const NewExam = () => {
 						onChange={(e: any) =>
 							setName(e.target.value)
 						}
+						value={name ? name : ''}
+						focused={name ? true : false}
 					/>
 					{remainingPoints > 0 && (
 						<Button
@@ -282,8 +314,29 @@ const NewExam = () => {
 					}}
 					startIcon={<Save />}
 					type='submit'>
-					Guardar examen
+					{`Guardar ${
+						!modeEdit ? 'examen' : 'cambios'
+					}`}
 				</Button>
+				{modeEdit && (
+					<Button
+						color='warning'
+						variant='outlined'
+						size='small'
+						style={{
+							margin: '10px',
+							height: '32px',
+						}}
+						startIcon={<Save />}
+						type='button'
+						onClick={() => {
+							setExamSelected({} as ExamInterface);
+							setValueNavigation('examenes');
+							navigate('../');
+						}}>
+						Cancelar
+					</Button>
+				)}
 			</form>
 			<div className='preview'>
 				<Typography variant='body1'>{name}</Typography>

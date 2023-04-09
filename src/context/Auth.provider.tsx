@@ -9,6 +9,7 @@ import {
 import axios from '../utils/axios';
 import { AxiosResponse, AxiosError } from 'axios';
 import { UserInfoInterface } from '../interface/auth.interface';
+import useExam from '../hooks/useExam';
 
 interface PropsInterface {
 	children: JSX.Element | JSX.Element[];

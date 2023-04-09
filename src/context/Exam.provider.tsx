@@ -28,6 +28,7 @@ interface StateInitialInterface {
 	postExam: (exam: ExamFormInterface) => void;
 	getExams: () => void;
 	getExamsAssigned: () => void;
+	editExam: (exam: ExamFormInterface) => void;
 }
 
 const ExamContext = createContext<StateInitialInterface>(
@@ -52,6 +53,29 @@ const ExamProvider = ({ children }: PropsInterface) => {
 		userInfo: { id },
 	} = useAuth();
 	const navigate = useNavigate();
+
+	const editExam = async (
+		exam: ExamFormInterface,
+	): Promise<AxiosResponse | AxiosError> => {
+		try {
+			const { data } = await axios.put(
+				`/exam/update-exam/${examSelected._id}`,
+				exam,
+			);
+			if (data.status !== 200) {
+				alertToastify('error', data.msg);
+				return {} as AxiosResponse;
+			}
+			alertToastify('success', data.msg);
+			setExamSelected({} as ExamInterface);
+			setValueNavigation('examenes');
+
+			navigate('user/exams');
+			return {} as AxiosResponse;
+		} catch (error) {
+			return error as AxiosError;
+		}
+	};
 
 	const getExamsAssigned = async (): Promise<
 		AxiosResponse | AxiosError
@@ -151,6 +175,7 @@ const ExamProvider = ({ children }: PropsInterface) => {
 				postExam,
 				getExams,
 				getExamsAssigned,
+				editExam,
 			}}>
 			{children}
 		</ExamContext.Provider>

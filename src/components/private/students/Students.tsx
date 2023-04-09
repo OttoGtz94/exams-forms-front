@@ -62,15 +62,7 @@ const Students = () => {
 	};
 
 	const handleAssign = () => {
-		/* 	console.log({
-			examIdSelected,
-			studentsSelected,
-			dateLimit,
-			id,
-		}); */
-
 		studentsSelected.forEach((studentId: string) => {
-			/* console.log(student); */
 			const time = new Date().getTime().toString();
 			const clave = `${time.slice(
 				time.length - 3,
@@ -81,7 +73,6 @@ const Students = () => {
 			)}-${studentId.slice(
 				studentId.length - 4,
 			)}-${time.slice(time.length - 3)}`.toUpperCase();
-			console.log(clave);
 			assignExam({
 				dateLimit,
 				userId: id,
