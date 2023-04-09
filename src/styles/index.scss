@@ -207,6 +207,31 @@ body {
 							}
 						}
 					}
+
+					.container {
+						width: 100%;
+						.exams {
+							width: 95%;
+							display: flex;
+							flex-wrap: wrap;
+							justify-content: flex-start;
+							margin: 0px auto;
+							.exam {
+								margin: 10px;
+								box-shadow: 0px 0px 5px
+									rgba(#fff, $alpha: 0.7);
+								display: flex;
+								flex-wrap: wrap;
+								align-content: space-between;
+							}
+						}
+
+						.students {
+							.containerTable {
+								margin: 20px auto;
+							}
+						}
+					}
 				}
 			}
 		}

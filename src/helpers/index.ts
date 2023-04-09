@@ -1,3 +1,4 @@
+import moment from 'moment';
 import { toast, ToastOptions } from 'react-toastify';
 
 export const alertToastify = (
@@ -20,3 +21,31 @@ export const alertToastify = (
 		? toast.warn(msg, options)
 		: toast.error(msg, options);
 };
+
+export const getDaysDifference = (
+	d1: Date,
+	d2: Date,
+): number => {
+	const dm1 = moment(d1.toString().split('T')[0]);
+	const dm2 = moment(d2.toString().split('T')[0]);
+
+	const diff = dm2.diff(dm1, 'days');
+
+	return diff;
+};
+/* export const formateDate = (fecha: Date): string => {
+	console.log(
+		fecha.getMonth,
+		fecha.getDay,
+		fecha.getFullYear,
+	);
+	console.log(
+		new Date(fecha).toLocaleDateString('es-Mx', {
+			weekday: 'long',
+			year: 'numeric',
+			month: 'long',
+			day: 'numeric',
+		}),
+	);
+	return 'fecha';
+}; */
