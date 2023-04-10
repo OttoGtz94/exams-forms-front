@@ -112,7 +112,6 @@ const ExamProvider = ({ children }: PropsInterface) => {
 					studentsExam.push(obj);
 				},
 			);
-			//console.log(studentsExam);
 			setExamsAsigned(studentsExam);
 
 			//setExams(data.exams);

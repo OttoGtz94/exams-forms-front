@@ -25,6 +25,10 @@ import MainStudent from './components/private/students/MainStudent';
 import Students from './components/private/students/Students';
 import NewStudent from './components/private/students/NewStudent';
 import { StudentProvider } from './context/Student.provider';
+import { GuestProvider } from './context/Guest.provider';
+import GuestStudent from './components/public/guest/GuestStudent';
+import FormClave from './components/public/guest/FormClave';
+import ExamGuest from './components/public/guest/ExamGuest';
 
 function App() {
 	return (
@@ -47,78 +51,107 @@ function App() {
 						<AuthProvider>
 							<ExamProvider>
 								<StudentProvider>
-									<Routes>
-										<Route
-											path='/'
-											element={<Home />}>
+									<GuestProvider>
+										<Routes>
 											<Route
-												path='/login'
-												element={<Login />}
-											/>
-											<Route
-												path='register'
-												element={<Register />}
-											/>
-											<Route
-												path='*'
-												element={<Error404 />}
-											/>
-										</Route>
-										<Route
-											path='/user'
-											element={<Private />}>
-											<Route
-												index
-												element={<Dashboard />}
-											/>
-											<Route
-												path='exams'
-												element={<MainExam />}>
+												path='/'
+												element={<Home />}>
 												<Route
-													index
-													element={<Exams />}
+													path='/login'
+													element={<Login />}
 												/>
 												<Route
-													path='add-exam'
-													element={<NewExam />}
-												/>
-												<Route
-													path='assigneds'
+													path='register'
 													element={
-														<ExamAssigneds />
-													}
-												/>
-												<Route
-													path='answered'
-													element={
-														<ExamAnswered />
+														<Register />
 													}
 												/>
 											</Route>
 											<Route
-												path='students'
+												path='guest-student'
 												element={
-													<MainStudent />
+													<GuestStudent />
 												}>
 												<Route
 													index
 													element={
-														<Students />
+														<FormClave />
 													}
 												/>
+
 												<Route
-													path='add-student'
+													path='exam'
 													element={
-														<NewStudent />
+														<ExamGuest />
 													}
 												/>
 											</Route>
 											<Route
-												path='*'
-												element={<Error404 />}
-											/>
-										</Route>
-									</Routes>
+												path='/user'
+												element={<Private />}>
+												<Route
+													index
+													element={
+														<Dashboard />
+													}
+												/>
+												<Route
+													path='exams'
+													element={
+														<MainExam />
+													}>
+													<Route
+														index
+														element={
+															<Exams />
+														}
+													/>
+													<Route
+														path='add-exam'
+														element={
+															<NewExam />
+														}
+													/>
+													<Route
+														path='assigneds'
+														element={
+															<ExamAssigneds />
+														}
+													/>
+													<Route
+														path='answered'
+														element={
+															<ExamAnswered />
+														}
+													/>
+												</Route>
+												<Route
+													path='students'
+													element={
+														<MainStudent />
+													}>
+													<Route
+														index
+														element={
+															<Students />
+														}
+													/>
+													<Route
+														path='add-student'
+														element={
+															<NewStudent />
+														}
+													/>
+												</Route>
+												<Route
+													path='*'
+													element={
+														<Error404 />
+													}
+												/>
+											</Route>
+										</Routes>
+									</GuestProvider>
 								</StudentProvider>
 							</ExamProvider>
 						</AuthProvider>

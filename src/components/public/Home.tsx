@@ -45,20 +45,30 @@ const Home = () => {
 								textDecoration: 'none',
 								fontSize: '17px',
 								color: '#fff',
-								margin: '0px 3px',
+								margin: '0px 10px',
 							}}
 							to={'/login'}>
-							Login
+							Iniciar Sesión
 						</Link>
 						<Link
 							style={{
 								textDecoration: 'none',
 								fontSize: '17px',
 								color: '#fff',
-								margin: '0px 3px',
+								margin: '0px 10px',
 							}}
 							to={'/register'}>
-							Register
+							Regitrarse
+						</Link>
+						<Link
+							style={{
+								textDecoration: 'none',
+								fontSize: '17px',
+								color: '#fff',
+								margin: '0px 10px',
+							}}
+							to={'/guest-student'}>
+							Responder examen
 						</Link>
 					</Toolbar>
 				</AppBar>
