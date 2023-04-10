@@ -1,4 +1,7 @@
-import { ExamInterface } from './exam.interface';
+import {
+	ExamInterface,
+	StudentExamAnsweredInterface,
+} from './exam.interface';
 export interface DialogExamFormInterface {
 	open: boolean;
 	examIdSelected: string;
@@ -13,4 +16,11 @@ export interface DialogExamInterface {
 	open: boolean;
 	setOpen: (flag: boolean) => void;
 	examSelected: ExamInterface;
+}
+
+export interface DialogExamAnsweredInterface {
+	open: boolean;
+	setOpen: (flag: boolean) => void;
+	exam: StudentExamAnsweredInterface;
+	handleClickMarkExam: (id: string) => void;
 }

@@ -35,7 +35,7 @@ const GuestProvider = ({ children }: PropsInterface) => {
 	): Promise<AxiosResponse | AxiosError> => {
 		try {
 			const { data } = await axios.post(
-				`/exam/mark-exam/${forStudent.exam.idAssigned}`,
+				`/exam/save-exam-student/${forStudent.exam.idAssigned}`,
 				{ exam },
 			);
 			if (data.status !== 200) {

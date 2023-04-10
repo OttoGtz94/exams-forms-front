@@ -57,39 +57,17 @@ const MainExam = () => {
 						value: 'assigneds',
 					},
 					{
+						label: 'Resueltos',
+						icon: AssignmentTurnedIn,
+						value: 'answered',
+					},
+					{
 						label: 'Nuevo Examen',
 						icon: AddBox,
 						value: 'add-exam',
 					},
 				]}
 			/>
-			{/* <div className='navigationContainer'>
-				<BottomNavigation
-					sx={{ width: 500 }}
-					value={valueNavigation}
-					onChange={handleClickNavigation}>
-					<BottomNavigationAction
-						label='Examenes'
-						value='examenes'
-						icon={<Quiz />}
-					/>
-					<BottomNavigationAction
-						label='Asignados'
-						value='assigneds'
-						icon={<AssignmentInd />}
-					/>
-					<BottomNavigationAction
-						label='Resueltos'
-						value='answered'
-						icon={<AssignmentTurnedIn />}
-					/>
-					<BottomNavigationAction
-						label='Nuevo Examen'
-						value='add-exam'
-						icon={<AddBox />}
-					/>
-				</BottomNavigation>
-			</div> */}
 			<div className='outletMain'>
 				<Outlet />
 			</div>

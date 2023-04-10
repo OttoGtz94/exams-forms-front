@@ -45,3 +45,39 @@ export interface ExamAssignedInterface {
 	dateLimit: Date;
 	examen: ExamInterface;
 }
+
+export interface StudentExamAnsweredInterface {
+	_id: string;
+	age: number;
+	name: string;
+	timeZone: string;
+	examAnswereds: ExamAnsweredInterface;
+}
+
+export interface ExamAnsweredInterface {
+	date: Date;
+	reviewed: boolean;
+	score: number;
+	studentAnswers: StudentAnswersInterface[];
+	_id: string;
+	exam: ExamFromAnswered;
+}
+
+export interface StudentAnswersInterface {
+	answer: string;
+	question: string;
+	_id: string;
+}
+
+export interface ExamFromAnswered {
+	name: string;
+	_id: string;
+	questions: QuestionFormInterface[];
+}
+
+export interface ExamAnsweredProps {
+	exam: StudentExamAnsweredInterface;
+	handleClickExam: (
+		exam: StudentExamAnsweredInterface,
+	) => void;
+}

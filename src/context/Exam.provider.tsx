@@ -8,6 +8,7 @@ import {
 import { alertToastify } from '../helpers/index';
 import { useNavigate } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
+import { StudentExamAnsweredInterface } from '../interface/exam.interface';
 import {
 	StudentExamAssignedInterface,
 	ExamAssignedInterface,
@@ -23,12 +24,18 @@ interface StateInitialInterface {
 	requestExams: boolean;
 	examsAsigned: StudentExamAssignedInterface[];
 	examSelected: ExamInterface;
+	examsAnswered: StudentExamAnsweredInterface[];
 	setValueNavigation: (value: string) => void;
 	setExamSelected: (exam: ExamInterface) => void;
+	setExamsAnswered: (
+		exam: StudentExamAnsweredInterface[],
+	) => void;
 	postExam: (exam: ExamFormInterface) => void;
 	getExams: () => void;
 	getExamsAssigned: () => void;
 	editExam: (exam: ExamFormInterface) => void;
+	getExamsAnswered: () => void;
+	markExam: (id: string) => void;
 }
 
 const ExamContext = createContext<StateInitialInterface>(
@@ -48,11 +55,53 @@ const ExamProvider = ({ children }: PropsInterface) => {
 	>([] as StudentExamAssignedInterface[]);
 	const [examSelected, setExamSelected] =
 		useState<ExamInterface>({} as ExamInterface);
+	const [examsAnswered, setExamsAnswered] = useState<
+		StudentExamAnsweredInterface[]
+	>([] as StudentExamAnsweredInterface[]);
 
 	const {
 		userInfo: { id },
 	} = useAuth();
 	const navigate = useNavigate();
+
+	const markExam = async (
+		id: string,
+	): Promise<AxiosResponse | AxiosError> => {
+		console.log(id);
+		try {
+			const { data } = await axios.post(
+				'/exam/mark-exam',
+				{ id },
+			);
+			if (data.status !== 200) {
+				alertToastify('error', data.msg);
+				return {} as AxiosResponse;
+			}
+			alertToastify('success', data.msg);
+
+			return {} as AxiosResponse;
+		} catch (error) {
+			return {} as AxiosError;
+		}
+	};
+
+	const getExamsAnswered = async (): Promise<
+		AxiosResponse | AxiosError
+	> => {
+		try {
+			const { data } = await axios.get(
+				`/exam/get-exams-answered/${id}`,
+			);
+			if (data.status !== 200) {
+				alertToastify('error', data.msg);
+				return {} as AxiosResponse;
+			}
+			setExamsAnswered(data.studentExamAnswered);
+			return {} as AxiosResponse;
+		} catch (error) {
+			return {} as AxiosError;
+		}
+	};
 
 	const editExam = async (
 		exam: ExamFormInterface,
@@ -169,12 +218,16 @@ const ExamProvider = ({ children }: PropsInterface) => {
 				exams,
 				examsAsigned,
 				examSelected,
+				examsAnswered,
 				setValueNavigation,
 				setExamSelected,
+				setExamsAnswered,
 				postExam,
 				getExams,
 				getExamsAssigned,
 				editExam,
+				getExamsAnswered,
+				markExam,
 			}}>
 			{children}
 		</ExamContext.Provider>

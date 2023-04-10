@@ -13,7 +13,9 @@ const ExamAssigneds = () => {
 	}, []);
 	return (
 		<div className='container'>
-			<Typography variant='h5'>Examenes</Typography>
+			<Typography variant='h5'>
+				Examenes Asignados
+			</Typography>
 
 			<div className='exams'>
 				{examsAsigned.length > 0 ? (

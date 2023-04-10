@@ -18,8 +18,8 @@ import Error404 from './components/public/Error404';
 import Exams from './components/private/exams/Exams';
 import MainExam from './components/private/exams/MainExam';
 import NewExam from './components/private/exams/NewExam';
-import ExamAssigneds from './components/private/exams/ExamAssigneds';
-import ExamAnswered from './components/private/exams/ExamAnswered';
+import ExamsAssigned from './components/private/exams/ExamsAssigned';
+import ExamsAnswered from './components/private/exams/ExamsAnswered';
 import { ExamProvider } from './context/Exam.provider';
 import MainStudent from './components/private/students/MainStudent';
 import Students from './components/private/students/Students';
@@ -115,13 +115,13 @@ function App() {
 													<Route
 														path='assigneds'
 														element={
-															<ExamAssigneds />
+															<ExamsAssigned />
 														}
 													/>
 													<Route
 														path='answered'
 														element={
-															<ExamAnswered />
+															<ExamsAnswered />
 														}
 													/>
 												</Route>
