@@ -13,6 +13,7 @@ import React from 'react';
 import {
 	alertToastify,
 	getDaysDifference,
+	hourByZone,
 } from '../../../helpers/index';
 import { ExamAssignedPropsInterface } from '../../../interface/exam.interface';
 
@@ -43,7 +44,9 @@ const ExamAssigned = ({
 					gutterBottom>
 					Quedan{' '}
 					{getDaysDifference(dateAssigned, dateLimit)}{' '}
-					días.
+					días para el{' '}
+					{hourByZone(dateLimit, exam.timeZone)}{' '}
+					{exam.timeZone}
 				</Typography>
 				<Typography variant='h6' component='div'>
 					{examen.name}
