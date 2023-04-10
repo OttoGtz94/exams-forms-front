@@ -16,7 +16,6 @@ const ExamsAnswered = () => {
 		useExam();
 
 	const handleClickMarkExam = (id: string) => {
-		console.log(id);
 		markExam(id);
 		setOpen(false);
 	};

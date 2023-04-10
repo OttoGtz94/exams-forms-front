@@ -5,9 +5,6 @@ import NavigationBar from '../../Layout/NavigationBar';
 import useStudent from '../../../hooks/useStudent';
 
 const MainStudent = () => {
-	/* const [valueNavigation, setValueNavigation] =
-		useState('estudiantes'); */
-
 	const { valueNavigation, setValueNavigation } =
 		useStudent();
 	const navigate = useNavigate();

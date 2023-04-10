@@ -46,7 +46,6 @@ const Login = () => {
 					color='primary'
 					variant='outlined'
 					label='Correo'
-					//focused
 					size='small'
 					style={{
 						width: '350px',
@@ -62,7 +61,6 @@ const Login = () => {
 					color='primary'
 					variant='outlined'
 					label='Password'
-					//focused
 					size='small'
 					style={{
 						width: '350px',

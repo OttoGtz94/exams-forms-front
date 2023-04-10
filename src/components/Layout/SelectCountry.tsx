@@ -65,10 +65,8 @@ const SelectCountry = ({
 							loading='lazy'
 							width='20'
 							src={`https://flagcdn.com/w20/${option.flagCode.toLowerCase()}.png`}
-							/* srcSet={`https://flagcdn.com/w40/${option.flagCode.toLowerCase()}.png 2x`} */
 							alt=''
 						/>
-						{/* {option.flagCode}{' '} */}
 						{option.country.trim()}
 						{' - '}
 						{option.timeZone.trim().split('/')[1]}
@@ -80,7 +78,7 @@ const SelectCountry = ({
 						label='Zona Horaria'
 						inputProps={{
 							...params.inputProps,
-							autoComplete: 'new-password', // disable autocomplete and autofill
+							autoComplete: 'new-password',
 						}}
 						color='primary'
 						size='small'

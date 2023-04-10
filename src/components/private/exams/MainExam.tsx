@@ -21,8 +21,6 @@ import NavigationBar from '../../Layout/NavigationBar';
 import useExam from '../../../hooks/useExam';
 
 const MainExam = () => {
-	/* const [valueNavigation, setValueNavigation] =
-		useState('examenes'); */
 	const { valueNavigation, setValueNavigation } =
 		useExam();
 

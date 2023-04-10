@@ -37,26 +37,21 @@ body {
 					rgba($colorPrimaryDark, $alpha: 0.3);
 			}
 
-			//private
 			.dashboard {
-				//background-color: #15895e;
 				width: 100%;
 				.containerIcons {
 					display: flex;
 					flex-wrap: wrap;
 					justify-content: center;
 					align-items: center;
-					//background-color: #15895e;
 					height: 30em;
 
 					.MuiBox-root {
-						//background-color: #891541;
 						width: 120px;
 						height: 120px;
 						margin: 10px;
 
 						.MuiButtonBase-root {
-							//background-color: #1fc587;
 							width: 100%;
 							height: 100%;
 							cursor: default;
@@ -80,20 +75,16 @@ body {
 			}
 			.main {
 				width: 100%;
-				//background-color: #15895e;
 				.navigationContainer {
 					width: 100%;
 					display: flex;
 					justify-content: center;
-					//background-color: #891541;
 				}
 				.outletMain {
 					width: 100%;
 					padding: 10px 0px;
 
-					//agregar examen
 					.containerForm {
-						//background-color: #638ab6;
 						width: 100%;
 						display: flex;
 						flex-wrap: wrap;
@@ -118,7 +109,6 @@ body {
 							.infoFormExam,
 							.questions {
 								width: 100%;
-								//background-color: #15895e;
 								display: flex;
 								flex-wrap: wrap;
 								align-content: flex-start;
@@ -146,11 +136,9 @@ body {
 							padding: 15px 10px;
 
 							ul {
-								//background-color: #15895e;
 								list-style: none;
 								padding: 0px;
 								.containerQuestion {
-									//background-color: #891541;
 									p {
 										margin: 3px 0px;
 									}
@@ -178,10 +166,8 @@ body {
 							}
 						}
 
-						//form student
 						.formStudent {
 							.group {
-								//background-color: #15895e;
 								width: 100%;
 								padding: 10px;
 								display: inline-flex;
@@ -244,9 +230,7 @@ body {
 			align-items: center;
 			width: 100%;
 			height: 50vh;
-			//background-color: #708915;
 			.formClaveGuest {
-				//background-color: #15895e;
 				width: 350px;
 				height: min-content;
 				display: flex;
@@ -258,17 +242,14 @@ body {
 			}
 
 			.examGuest {
-				//background-color: #5a0808;
 				width: 100%;
 				.welcome {
-					//background-color: #15895e;
 					width: 100%;
 				}
 
 				.formExamStudent {
 					width: 500px;
 					height: 70vh;
-					//background-color: #000000;
 					margin: auto;
 					border: 3px solid $colorErrorMain;
 					border-radius: 10px;
@@ -278,13 +259,11 @@ body {
 					flex-wrap: wrap;
 					justify-content: center;
 					.question {
-						//background-color: #a7da77;
 						margin: 10px 0px;
 						width: 100%;
 
 						.answer {
 							width: 100%;
-							//background-color: orange;
 							margin: 8px 0px;
 
 							.MuiTextField-root {
@@ -294,7 +273,6 @@ body {
 										cursor: pointer;
 										text-transform: capitalize;
 									}
-									//background-color: #15895e;
 								}
 							}
 						}

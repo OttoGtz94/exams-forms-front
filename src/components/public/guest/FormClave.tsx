@@ -15,7 +15,6 @@ const FormClave = () => {
 		<form
 			onSubmit={handleSubmit}
 			className='formClaveGuest'>
-			{/* <p>748-6A2-E78-CE7F-748</p> */}
 			<TextField
 				variant='filled'
 				color='primary'
@@ -29,7 +28,6 @@ const FormClave = () => {
 				variant='contained'
 				type='submit'
 				style={{
-					//width: 300,
 					marginTop: '10px',
 				}}
 				fullWidth>

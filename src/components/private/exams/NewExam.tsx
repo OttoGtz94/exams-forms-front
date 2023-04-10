@@ -172,10 +172,8 @@ const NewExam = () => {
 						color='primary'
 						variant='outlined'
 						label='Nombre Examen'
-						//focused
 						size='small'
 						style={{
-							//width: '350px',
 							margin: '10px',
 						}}
 						margin='normal'

@@ -1,5 +1,3 @@
-/* import { ThemeProvider } from '@emotion/react';
-import { createTheme } from '@mui/system'; */
 import {
 	createTheme,
 	CssBaseline,

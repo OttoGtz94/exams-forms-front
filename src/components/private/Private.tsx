@@ -72,18 +72,6 @@ const Private = () => {
 							</Link>
 						</Box>
 						<Box>
-							<IconButton
-								size='large'
-								//aria-label='show 17 new notifications'
-								color='inherit'>
-								<Badge
-									badgeContent={1}
-									color='error'>
-									<Notifications />
-								</Badge>
-							</IconButton>
-						</Box>
-						<Box>
 							<IconButton onClick={() => logout()}>
 								<FontAwesomeIcon
 									icon={faPowerOff}

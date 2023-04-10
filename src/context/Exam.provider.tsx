@@ -67,7 +67,6 @@ const ExamProvider = ({ children }: PropsInterface) => {
 	const markExam = async (
 		id: string,
 	): Promise<AxiosResponse | AxiosError> => {
-		console.log(id);
 		try {
 			const { data } = await axios.post(
 				'/exam/mark-exam',
@@ -163,8 +162,6 @@ const ExamProvider = ({ children }: PropsInterface) => {
 			);
 			setExamsAsigned(studentsExam);
 
-			//setExams(data.exams);
-			//setRequestExams(true);
 			return {} as AxiosResponse;
 		} catch (error) {
 			return error as AxiosError;

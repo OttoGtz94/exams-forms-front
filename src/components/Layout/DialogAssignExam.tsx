@@ -48,8 +48,6 @@ const DialogAssignExam = ({
 	setDateLimit,
 	handleAssign,
 }: DialogExamFormInterface) => {
-	/* const [examIdSelected, setExamIdSelected] = useState(''); */
-
 	const { exams, requestExams, getExams } = useExam();
 
 	useEffect(() => {
@@ -80,12 +78,6 @@ const DialogAssignExam = ({
 								const fecha: any =
 									Object.entries(e)[2][1];
 								setDateLimit(fecha);
-								/* const fechaEstudiante =
-									fecha.toLocaleString('es-RU', {
-										timeZone: 'Europe/Moscow',
-									});
-
-								console.log({ fechaEstudiante }); */
 							}}
 						/>
 					</DemoItem>

@@ -29,26 +29,6 @@ const NavigationBar = ({
 						/>
 					),
 				)}
-				{/* <BottomNavigationAction
-						label='Examenes'
-						value={}
-						icon={<Quiz />}
-					/>
-					<BottomNavigationAction
-						label='Asignados'
-						value='assigneds'
-						icon={<AssignmentInd />}
-					/>
-					<BottomNavigationAction
-						label='Resueltos'
-						value='answered'
-						icon={<AssignmentTurnedIn />}
-					/>
-					<BottomNavigationAction
-						label='Nuevo Examen'
-						value='add-exam'
-						icon={<AddBox />}
-					/> */}
 			</BottomNavigation>
 		</div>
 	);

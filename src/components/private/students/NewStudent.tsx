@@ -27,21 +27,7 @@ const NewStudent = () => {
 	const [city, setCity] = useState('');
 	const [curp, setCurp] = useState('');
 	const [age, setAge] = useState(18);
-	/* 
-	convierte la hora de mexico a españa
-	const dateMex = new Date();
-console.log('Date in mexico', dateMex);
-const esDate = dateMexico.toLocaleString('es-ES', {timeZone: 'Europe/Madrid'})
-console.log('Date in españa', esDate)
 
-------convierte fecha a fecha de otro pais
-const fechamanana = new Date('Sat Apr 08 2023 15:55:09 GMT-0600');
-console.log('Date manana in mexico', fechamanana);
-const esDate = fechamanana.toLocaleString('es-ES', {timeZone: 'Europe/Madrid'})
-console.log('Date in españa', esDate)
-
-
-*/
 	const { postStudent } = useStudent();
 	const {
 		userInfo: { id },
@@ -156,7 +142,6 @@ console.log('Date in españa', esDate)
 							size='small'
 							value={age}
 							aria-label='Small'
-							//valueLabelDisplay='auto'
 							min={6}
 							max={100}
 							onChange={(e: any) =>

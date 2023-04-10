@@ -4,16 +4,10 @@ import { useEffect } from 'react';
 import { ExamInterface } from '../../../interface/exam.interface';
 import Exam from './Exam';
 import DialogExam from '../../Layout/DialogExam';
-import {
-	Dialog,
-	DialogTitle,
-	Typography,
-} from '@mui/material';
+import { Typography } from '@mui/material';
 
 const Exams = () => {
 	const [open, setOpen] = useState(false);
-	/* const [examSelected, setExamSelected] =
-		useState<ExamInterface>({} as ExamInterface); */
 
 	const {
 		exams,

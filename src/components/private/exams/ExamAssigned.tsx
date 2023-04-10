@@ -57,13 +57,11 @@ const ExamAssigned = ({
 					gutterBottom>
 					{name}
 				</Typography>
-				{/* <Typography variant='body2'>dsf</Typography> */}
 			</CardContent>
 
 			<CardActions>
 				<IconButton
 					size='large'
-					//aria-label='show 17 new notifications'
 					color='secondary'
 					onClick={() => {
 						navigator.clipboard.writeText(clave);
@@ -74,9 +72,6 @@ const ExamAssigned = ({
 					}}>
 					<Share />
 				</IconButton>
-				{/* <Button size='small' color='secondary'>
-					Learn More
-				</Button> */}
 			</CardActions>
 		</Card>
 	);
